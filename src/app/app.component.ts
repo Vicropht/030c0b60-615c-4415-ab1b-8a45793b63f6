@@ -8,7 +8,7 @@ import { rTEvent } from './services/events/EventInterface';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  public eventsResponse: rTEvent[] = [];
+  public events: rTEvent[] = [];
   public searchString: string = '';
 
   constructor(private eventService: EventsService) {}
@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
     this.parseEvents();
   }
 
+  // Save events in events array
   parseEvents() {
     this.eventService.getEvents().subscribe((data: rTEvent[]) => {
-      this.eventsResponse = data;
+      this.events = data;
     });
   }
 }

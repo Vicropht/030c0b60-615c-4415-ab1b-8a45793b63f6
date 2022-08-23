@@ -1,4 +1,4 @@
-<p>
+<header>
   <mat-toolbar>
     <div class="search-bar">
       <mat-form-field>
@@ -19,6 +19,26 @@
       <mat-icon fontIcon="shopping_cart"> </mat-icon>
     </button>
   </mat-toolbar>
-</p>
+</header>
 
-<span>{{eventsResponse | json}}</span>
+<body>
+  <div class="applied-filters">
+    <mat-chip-list>
+      <mat-chip>
+        <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
+        Filter 1
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <h1>Public Events</h1>
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+  </mat-grid-list>
+
+  <span>{{events | json}}</span>
+</body>

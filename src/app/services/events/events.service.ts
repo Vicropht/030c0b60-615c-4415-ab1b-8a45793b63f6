@@ -10,6 +10,7 @@ import { rTEvent } from './EventInterface';
 export class EventsService {
   constructor(private http: HttpClient) {}
 
+  // HTTP Request to get events
   public getEvents(): Observable<rTEvent[]> {
     return this.http.get<rTEvent[]>(environment.apiPath);
   }
