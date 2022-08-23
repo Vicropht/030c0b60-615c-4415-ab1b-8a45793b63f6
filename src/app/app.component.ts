@@ -9,6 +9,7 @@ import { rTEvent } from './services/events/EventInterface';
 })
 export class AppComponent implements OnInit {
   public eventsResponse: rTEvent[] = [];
+  public searchString: string = '';
 
   constructor(private eventService: EventsService) {}
 
