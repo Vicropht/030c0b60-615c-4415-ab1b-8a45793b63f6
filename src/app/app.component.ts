@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EventsService } from './services/events/events.service';
+import { rTEvent } from './services/events/EventInterface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'recruiting-task';
+export class AppComponent implements OnInit {
+  public eventsResponse: rTEvent[] = [];
+
+  constructor(private eventService: EventsService) {}
+
+  ngOnInit(): void {
+    this.parseEvents();
+  }
+
+  parseEvents() {
+    this.eventService.getEvents().subscribe((data: rTEvent[]) => {
+      this.eventsResponse = data;
+    });
+  }
 }
