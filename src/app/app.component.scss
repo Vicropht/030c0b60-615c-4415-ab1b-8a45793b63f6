@@ -1,0 +1,28 @@
+* {
+  text-align: center;
+}
+
+mat-expansion-panel {
+  display: inline-block;
+  width: fit-content;
+}
+
+.sub-header {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.mode-toggle {
+  display: inline-block;
+  position: relative;
+  right: 15%;
+}
+
+.id-input {
+  position: relative;
+  left: 17%;
+}
+
+app-comic {
+  display: inline-block;
+}

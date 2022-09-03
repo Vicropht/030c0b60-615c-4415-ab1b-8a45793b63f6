@@ -1,0 +1,20 @@
+<ng-container *ngIf="comicLoaded; else notLoaded">
+  <mat-card>
+    <div class="comic-details">
+      <span class="comic-id">{{"ID: " + displayedComic.num}}</span>
+      <span class="comic-title">{{displayedComic.safe_title}}</span>
+      <button ngClass="" class="comic-fav" mat-icon-button (click)="saveId(displayedComic.num)">
+        <mat-icon fontIcon="favorite"></mat-icon>
+      </button>
+    </div>
+
+    <mat-card-content>
+      <img src="{{displayedComic.img}}" />
+      <p>{{displayedComic.alt}}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #notLoaded>
+  <mat-spinner></mat-spinner>
+</ng-template>

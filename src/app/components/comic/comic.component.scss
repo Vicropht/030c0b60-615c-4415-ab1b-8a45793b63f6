@@ -1,0 +1,14 @@
+.mat-card-header-text {
+  display: none !important;
+}
+
+.comic-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 10px;
+}
