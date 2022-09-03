@@ -29,8 +29,10 @@
   </div>
 
   <ng-container *ngIf="currentView === viewEnum.LATEST; else listView">
-    <app-comic></app-comic>
+    <app-comic (newFavoriteComic)="addComicToFavorites($event)"></app-comic>
   </ng-container>
 
-  <ng-template #listView></ng-template>
+  <ng-template #listView>
+    <app-comic-list></app-comic-list>
+  </ng-template>
 </div>

@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   public comicById: number;
   public panelOpenState: boolean = false;
   public currentView: View = this.viewEnum.LATEST;
-  private favorites: number[] = [];
 
   toggleTheme = new FormControl(false);
 
@@ -57,5 +56,14 @@ export class AppComponent implements OnInit {
     this.currentView === View.LATEST
       ? (this.currentView = View.FAVORITES)
       : (this.currentView = View.LATEST);
+  }
+
+  addComicToFavorites(id: number) {
+    // Retrieve
+    let storedFavorites = JSON.parse(localStorage['favorites']);
+    storedFavorites += id;
+
+    // Save
+    localStorage['favorites'] = JSON.stringify(storedFavorites);
   }
 }

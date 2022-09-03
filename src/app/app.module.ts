@@ -16,9 +16,10 @@ import { AppComponent } from './app.component';
 import { ComicComponent } from './components/comic/comic.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ComicListComponent } from './components/comic-list/comic-list.component';
 
 @NgModule({
-  declarations: [AppComponent, ComicComponent],
+  declarations: [AppComponent, ComicComponent, ComicListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

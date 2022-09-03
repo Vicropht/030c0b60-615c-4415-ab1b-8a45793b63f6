@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Comic } from './Comic.interface';
 import { ComicService } from './comic.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-comic',
@@ -8,7 +9,8 @@ import { ComicService } from './comic.service';
   styleUrls: ['./comic.component.scss'],
 })
 export class ComicComponent implements OnInit {
-  @Input() id = null;
+  @Input() id: Comic;
+  @Output() newFavoriteComic = new EventEmitter<number>();
 
   public currentId: number;
   public displayedComic: Comic;
@@ -34,7 +36,6 @@ export class ComicComponent implements OnInit {
   }
 
   saveId(id: number) {
-    // send id to main component and save it there
-    localStorage.setItem('favorite', String(id));
+    this.newFavoriteComic.emit(id);
   }
 }
